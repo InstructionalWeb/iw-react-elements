@@ -1,5 +1,5 @@
-import Section from "./Components/Section";
-import Heading from "./Components/Heading";
+import Section from "./components/Section";
+import Heading from "./components/Heading";
 
 /*
  * The Elements component is a collection of components for spitting out styled markup
