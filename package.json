@@ -1,5 +1,5 @@
 {
-  "name": "@instructional-web/react-elements",
+  "name": "iw-react-elements",
   "version": "1.0.0",
   "description": "Instruction Web React custom elements",
   "main": "index.js",
@@ -11,8 +11,8 @@
     "url": "git+https://github.com/InstructionalWeb/iw-react-elements.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Robert Ferguson",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/InstructionalWeb/iw-react-elements/issues"
   },
