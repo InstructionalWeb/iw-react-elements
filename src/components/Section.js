@@ -1,35 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Img } from '../Elements/Elements';
+import styled, { css } from 'styled-components';
+import { Img } from './Img';
 import { Box } from '@rebass/grid';
 
-// <img 
-// data-flickity-lazyload-srcset="{{ slide.image_content.url|resize(480) }} 480w, 
-// {{ slide.image_content.url|resize(640) }} 640w,
-// {{ slide.image_content.url|resize(800) }} 800w, 
-// {{ slide.image_content.url|resize(1024) }} 1024w,
-// {{ slide.image_content.url|resize(2000) }} 2000w"
-// sizes="100vw"
-// data-flickity-lazyload-src={{ slide.image_content.url|resize(800) }}
-// alt="{{ slide.image_content.alt }}" />
-
-
-// <img
-//         srcset={`${props.sizes.medium} 480w, 
-//         ${ props.sizes.medium_large} 800w,
-//         ${ props.sizes.large} 1024w`}
-//         sizes='100vw'
-//         style={{
-//           position: 'absolute',
-//           left: 0,
-//           top: 0,
-//           right: 0,
-//           bottom: 0
-//         }} />}
-
-export default (props) => {
+const Section = (props) => {
   return (
-    <Section as="section" image={props.sizes} bg={props.bg} bgAlign={props.bgAlign} {...props}>
+    <StyledSection as="section" image={props.sizes} bg={props.bg} layout={props.layout} bgAlign={props.bgAlign} {...props}>
       {props.sizes && <Img
         sizes={props.sizes}
         style={{
@@ -51,13 +27,52 @@ export default (props) => {
         objectPosition: 'center',
       }} />}
       {props.children}
-    </Section>
+    </StyledSection>
   )
 }
 
-const Section = styled(Box)`
+export default Section;
+
+const StyledSection = styled(Box)`
   position: relative;
-  padding: 2rem 0;
+  padding: 0 0 1.5rem 0;
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2rem;
+  }
+
+  ${props => props.bg || props.image ? css`
+    padding: 2rem 0; 
+  ` : null
+  }
+
+  ${props => props.layout && props.layout.text_mode === 'light' && css`
+    color: white;
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  `}
+
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  ${props => props.layout && props.layout.background === 'Color' && css`
+    background-color: ${props.layout.background_color};
+  `}
+
+  ${props => props.layout && props.layout.background === 'Image' && css`
+    background-image: url(${props.layout.background_image.url});
+    background-repeat: repeat;
+    background-position: center center;
+  `}
 
   .section__bg {
     display: block;
