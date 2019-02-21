@@ -9,8 +9,6 @@ function printHeadingColor(color) {
 
     return css`color: ${color}`;
   }
-
-  return css`color: rgb(26, 82, 118);`
 }
 
 function printUnderline(color, underline) {
