@@ -1,6 +1,6 @@
 {
   "name": "iw-react-elements",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Instruction Web React custom elements",
   "main": "dist/index.js",
   "scripts": {
